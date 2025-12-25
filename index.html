@@ -196,7 +196,6 @@
         <label for="docente">Docente observado:</label>
         <select id="docente" name="docente" required>
           <option value="" disabled selected>Seleccione un docente</option>
-          <!-- Estos valores deben ser rellenados dinámicamente desde Supabase -->
           <option value="0076033b-ad36-4bf2-9b96-91626652bd1c">Bustos Aravena, Ignacia</option>
           <option value="03301f23-ec88-4d9a-b258-741a201b9361">Delgado Osorio, Amanda</option>
           <option value="080db803-994e-4cd1-9b1e-cd888a137efc">Valenzuela Ríos, Camilo</option>
@@ -561,9 +560,9 @@
       }
 
       // Datos generales para la tabla 'observaciones'
+      // ⚠️ ¡IMPORTANTE! NO incluir 'docente_nombre' porque ya no existe en la tabla.
       const datosObservacion = {
         docente_id: docenteId,
-        docente_nombre: document.getElementById('docente').selectedOptions[0].text,
         curso: curso,
         asignatura: asignatura,
         observador: observador,
@@ -573,10 +572,9 @@
         criterios_por_mejorar: document.querySelector('textarea[name="criterios_por_mejorar"]').value
       };
 
-      // 🔒 SEGURIDAD: Reemplaza con tus credenciales reales
-      // ⚠️ Asegúrate de tener RLS activada en Supabase
-      const SUPABASE_URL = 'https://tu-proyecto.supabase.co';
-      const SUPABASE_KEY = 'tu-anon-key';
+      // 🔒 ¡REEMPLAZA ESTOS VALORES CON TU PROYECTO DE SUPABASE!
+      const SUPABASE_URL = 'https://TU_PROYECTO.supabase.co'; // ⚠️ Sin espacios al final
+      const SUPABASE_KEY = 'TU_ANON_KEY_AQUI';
 
       try {
         // Paso 1: Insertar en la tabla 'observaciones' y obtener el ID
@@ -592,11 +590,12 @@
         });
 
         if (!obsResponse.ok) {
-          throw new Error(`Error al crear observación: ${obsResponse.status}`);
+          const errorText = await obsResponse.text();
+          throw new Error(`Error al crear observación: ${obsResponse.status} - ${errorText}`);
         }
 
         const obsData = await obsResponse.json();
-        const observacionId = obsData[0].id; // Suponiendo que devuelve un array con un elemento
+        const observacionId = obsData[0].id;
 
         // Paso 2: Insertar cada respuesta en la tabla 'respuestas'
         const promesasRespuestas = [];
@@ -626,8 +625,6 @@
 
         // Esperar a que todas las respuestas se guarden
         const resultadosRespuestas = await Promise.all(promesasRespuestas);
-
-        // Verificar si todas las respuestas fueron exitosas
         const todasExitosas = resultadosRespuestas.every(res => res.ok);
 
         if (todasExitosas) {
@@ -639,7 +636,7 @@
 
       } catch (error) {
         console.error('Error al enviar observación:', error);
-        alert(`Hubo un problema al guardar los datos. Por favor, inténtalo de nuevo.\nDetalles: ${error.message}`);
+        alert(`Hubo un problema al guardar los datos:\n${error.message}`);
       }
     }
   </script>
