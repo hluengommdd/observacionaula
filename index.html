@@ -194,7 +194,24 @@
       <!-- Datos generales -->
       <div class="form-group">
         <label for="docente">Docente observado:</label>
-        <input type="text" id="docente" name="docente" placeholder="Apellido, Nombre" required>
+        <select id="docente" name="docente" required>
+          <option value="" disabled selected>Seleccione un docente</option>
+          <!-- Estos valores deben ser rellenados dinámicamente desde Supabase -->
+          <option value="0076033b-ad36-4bf2-9b96-91626652bd1c">Bustos Aravena, Ignacia</option>
+          <option value="03301f23-ec88-4d9a-b258-741a201b9361">Delgado Osorio, Amanda</option>
+          <option value="080db803-994e-4cd1-9b1e-cd888a137efc">Valenzuela Ríos, Camilo</option>
+          <option value="0d3a9248-2284-4f22-b718-b16f1070f014">Jiménez Acuña, Emilia</option>
+          <option value="19dad6dc-7870-4b6c-9c05-13bd663bb518">Ríos Valenzuela, Martín</option>
+          <option value="23ff9d09-b6db-4059-b04d-c5accc1a3de2">Fuentes Castro, Isabella</option>
+          <option value="3ad4d8fa-c7d5-4d16-9682-f0cb98052bac">Alarcón Becerra, José</option>
+          <option value="4c679e47-99bf-46ef-bd79-92e882a1d511">Toro Ibáñez, Maximiliano</option>
+          <option value="4edf031a-ffb3-4d7f-be51-c532fc0c9021">Torres Medina, Claudia</option>
+          <option value="5853f471-a32a-409f-8c08-8fd46a5f05e7">Leiva Carrasco, Tomás</option>
+          <option value="69be51b6-070f-4f3f-a505-cad106c10f2e">Orellana Castillo, Antonia</option>
+          <option value="6b8ca58d-dd71-4857-b162-028431e40206">Henríquez Nuñez, Catalina</option>
+          <option value="70e766a3-7f9b-45b0-ada4-3961240f68dc">Donoso Reyes, Sofía</option>
+          <option value="76073ff2-ce95-42f5-85dc-59fa1baa6171">Figueroa Riquelme, Laura</option>
+        </select>
       </div>
       <div class="form-group">
         <label for="curso">Curso:</label>
@@ -272,43 +289,44 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td class="indicator">1. El docente mantiene un trato formal y respetuoso con los estudiantes.</td>
-            <td><input type="radio" name="ambiente_1" value="1"></td>
-            <td><input type="radio" name="ambiente_1" value="0"></td>
-            <td><input type="radio" name="ambiente_1"></td>
-          </tr>
-          <tr>
-            <td class="indicator">2. El docente estimula la participación de los estudiantes respetando las normas de trabajo y convivencia en la sala de clases.</td>
-            <td><input type="radio" name="ambiente_2" value="1"></td>
-            <td><input type="radio" name="ambiente_2" value="0"></td>
-            <td><input type="radio" name="ambiente_2"></td>
-          </tr>
-          <tr>
-            <td class="indicator">3. El docente utiliza estrategias para crear y mantener un clima de trabajo favorable para el aprendizaje.</td>
-            <td><input type="radio" name="ambiente_3" value="1"></td>
-            <td><input type="radio" name="ambiente_3" value="0"></td>
-            <td><input type="radio" name="ambiente_3"></td>
-          </tr>
-          <tr>
-            <td class="indicator">4. El docente regula las conductas disruptivas de los estudiantes frente al quiebre de las normas de convivencia.</td>
-            <td><input type="radio" name="ambiente_4" value="1"></td>
-            <td><input type="radio" name="ambiente_4" value="0"></td>
-            <td><input type="radio" name="ambiente_4"></td>
-          </tr>
-          <tr>
-            <td class="indicator">5. El docente estimula la aceptación e integración de los estudiantes con Necesidades Educativas Especiales, y los demás estudiantes.</td>
-            <td><input type="radio" name="ambiente_5" value="1"></td>
-            <td><input type="radio" name="ambiente_5" value="0"></td>
-            <td><input type="radio" name="ambiente_5"></td>
-          </tr>
-          <tr>
-            <td class="indicator">6. El docente implementa un trabajo cooperativo en el que se potencia un trabajo en equipo.</td>
-            <td><input type="radio" name="ambiente_6" value="1"></td>
-            <td><input type="radio" name="ambiente_6" value="0"></td>
-            <td><input type="radio" name="ambiente_6"></td>
-          </tr>
-        </tbody>
+<tr>
+  <td class="indicator">1. El docente mantiene un trato formal y respetuoso con los estudiantes.</td>
+  <td><input type="radio" name="ambiente_1" value="1"></td>
+  <td><input type="radio" name="ambiente_1" value="0"></td>
+  <td><input type="radio" name="ambiente_1"></td>
+</tr>
+<tr>
+  <td class="indicator">2. El docente estimula la participación de los estudiantes respetando las normas de trabajo y convivencia en la sala de clases.</td>
+  <td><input type="radio" name="ambiente_2" value="1"></td>
+  <td><input type="radio" name="ambiente_2" value="0"></td>
+  <td><input type="radio" name="ambiente_2"></td>
+</tr>
+<tr>
+  <td class="indicator">3. El docente utiliza estrategias para crear y mantener un clima de trabajo favorable para el aprendizaje.</td>
+  <td><input type="radio" name="ambiente_3" value="1"></td>
+  <td><input type="radio" name="ambiente_3" value="0"></td>
+  <td><input type="radio" name="ambiente_3"></td>
+</tr>
+<tr>
+  <td class="indicator">4. El docente regula las conductas disruptivas de los estudiantes frente al quiebre de las normas de convivencia.</td>
+  <td><input type="radio" name="ambiente_4" value="1"></td>
+  <td><input type="radio" name="ambiente_4" value="0"></td>
+  <td><input type="radio" name="ambiente_4"></td>
+</tr>
+<tr>
+  <td class="indicator">5. El docente estimula la aceptación e integración de los estudiantes con Necesidades Educativas Especiales, y los demás estudiantes.</td>
+  <td><input type="radio" name="ambiente_5" value="1"></td>
+  <td><input type="radio" name="ambiente_5" value="0"></td>
+  <td><input type="radio" name="ambiente_5"></td>
+</tr>
+<tr>
+  <td class="indicator">6. El docente implementa un trabajo cooperativo en el que se potencia un trabajo en equipo.</td>
+  <td><input type="radio" name="ambiente_6" value="1"></td>
+  <td><input type="radio" name="ambiente_6" value="0"></td>
+  <td><input type="radio" name="ambiente_6"></td>
+</tr>
+</tbody>
+
       </table>
 
       <!-- Dimensión 2 -->
@@ -323,43 +341,44 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td class="indicator">1. El docente establece relaciones entre los objetivos y actividades de aprendizaje, con experiencias previas de los estudiantes.</td>
-            <td><input type="radio" name="interaccion_1" value="1"></td>
-            <td><input type="radio" name="interaccion_1" value="0"></td>
-            <td><input type="radio" name="interaccion_1"></td>
-          </tr>
-          <tr>
-            <td class="indicator">2. El docente utiliza actividades de enseñanza coherente con el contenido y adecuada al tiempo disponible.</td>
-            <td><input type="radio" name="interaccion_2" value="1"></td>
-            <td><input type="radio" name="interaccion_2" value="0"></td>
-            <td><input type="radio" name="interaccion_2"></td>
-          </tr>
-          <tr>
-            <td class="indicator">3. El docente utiliza distintas estrategias para explicar un contenido de la clase.</td>
-            <td><input type="radio" name="interaccion_3" value="1"></td>
-            <td><input type="radio" name="interaccion_3" value="0"></td>
-            <td><input type="radio" name="interaccion_3"></td>
-          </tr>
-          <tr>
-            <td class="indicator">4. El docente evalúa y monitorea sistemáticamente el grado de aprendizaje alcanzado por los estudiantes en los distintos momentos de la clase.</td>
-            <td><input type="radio" name="interaccion_4" value="1"></td>
-            <td><input type="radio" name="interaccion_4" value="0"></td>
-            <td><input type="radio" name="interaccion_4"></td>
-          </tr>
-          <tr>
-            <td class="indicator">5. El docente corrige los errores de los estudiantes y los utiliza como instancia de aprendizaje.</td>
-            <td><input type="radio" name="interaccion_5" value="1"></td>
-            <td><input type="radio" name="interaccion_5" value="0"></td>
-            <td><input type="radio" name="interaccion_5"></td>
-          </tr>
-          <tr>
-            <td class="indicator">6. El docente utiliza estrategias de retroalimentación que permiten a los estudiantes verificar el logro de sus aprendizajes.</td>
-            <td><input type="radio" name="interaccion_6" value="1"></td>
-            <td><input type="radio" name="interaccion_6" value="0"></td>
-            <td><input type="radio" name="interaccion_6"></td>
-          </tr>
-        </tbody>
+<tr>
+  <td class="indicator">1. El docente establece relaciones entre los objetivos y actividades de aprendizaje, con experiencias previas de los estudiantes.</td>
+  <td><input type="radio" name="interaccion_1" value="1"></td>
+  <td><input type="radio" name="interaccion_1" value="0"></td>
+  <td><input type="radio" name="interaccion_1"></td>
+</tr>
+<tr>
+  <td class="indicator">2. El docente utiliza actividades de enseñanza coherente con el contenido y adecuada al tiempo disponible.</td>
+  <td><input type="radio" name="interaccion_2" value="1"></td>
+  <td><input type="radio" name="interaccion_2" value="0"></td>
+  <td><input type="radio" name="interaccion_2"></td>
+</tr>
+<tr>
+  <td class="indicator">3. El docente utiliza distintas estrategias para explicar un contenido de la clase.</td>
+  <td><input type="radio" name="interaccion_3" value="1"></td>
+  <td><input type="radio" name="interaccion_3" value="0"></td>
+  <td><input type="radio" name="interaccion_3"></td>
+</tr>
+<tr>
+  <td class="indicator">4. El docente evalúa y monitorea sistemáticamente el grado de aprendizaje alcanzado por los estudiantes en los distintos momentos de la clase.</td>
+  <td><input type="radio" name="interaccion_4" value="1"></td>
+  <td><input type="radio" name="interaccion_4" value="0"></td>
+  <td><input type="radio" name="interaccion_4"></td>
+</tr>
+<tr>
+  <td class="indicator">5. El docente corrige los errores de los estudiantes y los utiliza como instancia de aprendizaje.</td>
+  <td><input type="radio" name="interaccion_5" value="1"></td>
+  <td><input type="radio" name="interaccion_5" value="0"></td>
+  <td><input type="radio" name="interaccion_5"></td>
+</tr>
+<tr>
+  <td class="indicator">6. El docente utiliza estrategias de retroalimentación que permiten a los estudiantes verificar el logro de sus aprendizajes.</td>
+  <td><input type="radio" name="interaccion_6" value="1"></td>
+  <td><input type="radio" name="interaccion_6" value="0"></td>
+  <td><input type="radio" name="interaccion_6"></td>
+</tr>
+</tbody>
+
       </table>
 
       <!-- Dimensión 3 -->
@@ -374,43 +393,44 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td class="indicator">1. Al inicio, el docente comunica los objetivos o propósitos que se trabajarán en la clase.</td>
-            <td><input type="radio" name="organizacion_1" value="1"></td>
-            <td><input type="radio" name="organizacion_1" value="0"></td>
-            <td><input type="radio" name="organizacion_1"></td>
-          </tr>
-          <tr>
-            <td class="indicator">2. El docente se preocupa de recibir, mantener y entregar la sala de clases limpia.</td>
-            <td><input type="radio" name="organizacion_2" value="1"></td>
-            <td><input type="radio" name="organizacion_2" value="0"></td>
-            <td><input type="radio" name="organizacion_2"></td>
-          </tr>
-          <tr>
-            <td class="indicator">3. El docente organiza el espacio de la sala para favorecer la participación e interacción de los estudiantes, y el monitoreo del trabajo.</td>
-            <td><input type="radio" name="organizacion_3" value="1"></td>
-            <td><input type="radio" name="organizacion_3" value="0"></td>
-            <td><input type="radio" name="organizacion_3"></td>
-          </tr>
-          <tr>
-            <td class="indicator">4. El docente utiliza recursos pertinentes para desarrollar las actividades de aprendizaje de la clase.</td>
-            <td><input type="radio" name="organizacion_4" value="1"></td>
-            <td><input type="radio" name="organizacion_4" value="0"></td>
-            <td><input type="radio" name="organizacion_4"></td>
-          </tr>
-          <tr>
-            <td class="indicator">5. El docente aprovecha productivamente el tiempo disponible de la clase para el aprendizaje de sus estudiantes.</td>
-            <td><input type="radio" name="organizacion_5" value="1"></td>
-            <td><input type="radio" name="organizacion_5" value="0"></td>
-            <td><input type="radio" name="organizacion_5"></td>
-          </tr>
-          <tr>
-            <td class="indicator">6. El docente refuerza las ideas fuerza desarrolladas al término de su clase.</td>
-            <td><input type="radio" name="organizacion_6" value="1"></td>
-            <td><input type="radio" name="organizacion_6" value="0"></td>
-            <td><input type="radio" name="organizacion_6"></td>
-          </tr>
-        </tbody>
+<tr>
+  <td class="indicator">1. Al inicio, el docente comunica los objetivos o propósitos que se trabajarán en la clase.</td>
+  <td><input type="radio" name="organizacion_1" value="1"></td>
+  <td><input type="radio" name="organizacion_1" value="0"></td>
+  <td><input type="radio" name="organizacion_1"></td>
+</tr>
+<tr>
+  <td class="indicator">2. El docente se preocupa de recibir, mantener y entregar la sala de clases limpia.</td>
+  <td><input type="radio" name="organizacion_2" value="1"></td>
+  <td><input type="radio" name="organizacion_2" value="0"></td>
+  <td><input type="radio" name="organizacion_2"></td>
+</tr>
+<tr>
+  <td class="indicator">3. El docente organiza el espacio de la sala para favorecer la participación e interacción de los estudiantes, y el monitoreo del trabajo.</td>
+  <td><input type="radio" name="organizacion_3" value="1"></td>
+  <td><input type="radio" name="organizacion_3" value="0"></td>
+  <td><input type="radio" name="organizacion_3"></td>
+</tr>
+<tr>
+  <td class="indicator">4. El docente utiliza recursos pertinentes para desarrollar las actividades de aprendizaje de la clase.</td>
+  <td><input type="radio" name="organizacion_4" value="1"></td>
+  <td><input type="radio" name="organizacion_4" value="0"></td>
+  <td><input type="radio" name="organizacion_4"></td>
+</tr>
+<tr>
+  <td class="indicator">5. El docente aprovecha productivamente el tiempo disponible de la clase para el aprendizaje de sus estudiantes.</td>
+  <td><input type="radio" name="organizacion_5" value="1"></td>
+  <td><input type="radio" name="organizacion_5" value="0"></td>
+  <td><input type="radio" name="organizacion_5"></td>
+</tr>
+<tr>
+  <td class="indicator">6. El docente refuerza las ideas fuerza desarrolladas al término de su clase.</td>
+  <td><input type="radio" name="organizacion_6" value="1"></td>
+  <td><input type="radio" name="organizacion_6" value="0"></td>
+  <td><input type="radio" name="organizacion_6"></td>
+</tr>
+</tbody>
+
       </table>
 
       <!-- Observaciones -->
@@ -492,30 +512,47 @@
       return null; // N/A (radio sin value)
     }
 
+    // Mapeo de nombre de campo a indicador_id
+    const indicadorMap = {
+      ambiente_1: 1,
+      ambiente_2: 2,
+      ambiente_3: 3,
+      ambiente_4: 4,
+      ambiente_5: 5,
+      ambiente_6: 6,
+      interaccion_1: 7,
+      interaccion_2: 8,
+      interaccion_3: 9,
+      interaccion_4: 10,
+      interaccion_5: 11,
+      interaccion_6: 12,
+      organizacion_1: 13,
+      organizacion_2: 14,
+      organizacion_3: 15,
+      organizacion_4: 16,
+      organizacion_5: 17,
+      organizacion_6: 18
+    };
+
     // Envía la observación a Supabase
     async function enviarObservacion() {
-      const docente = document.getElementById('docente').value;
+      const docenteId = document.getElementById('docente').value;
       const curso = document.getElementById('curso').value;
       const asignatura = document.getElementById('asignatura').value;
       const observador = document.getElementById('observador').value;
       const fecha = document.getElementById('fecha').value;
 
-      if (!docente || !curso || !asignatura || !observador || !fecha) {
+      if (!docenteId || !curso || !asignatura || !observador || !fecha) {
         alert("Por favor, completa todos los campos obligatorios.");
         return;
       }
 
       // Extraer respuestas
-      const indicadores = {};
-      const nombres = [
-        'ambiente_1','ambiente_2','ambiente_3','ambiente_4','ambiente_5','ambiente_6',
-        'interaccion_1','interaccion_2','interaccion_3','interaccion_4','interaccion_5','interaccion_6',
-        'organizacion_1','organizacion_2','organizacion_3','organizacion_4','organizacion_5','organizacion_6'
-      ];
+      const nombresIndicadores = Object.keys(indicadorMap);
       let alMenosUnoMarcado = false;
-      for (const nombre of nombres) {
-        indicadores[nombre] = getRespuesta(nombre);
-        if (indicadores[nombre] !== null) alMenosUnoMarcado = true;
+      for (const nombre of nombresIndicadores) {
+        const valor = getRespuesta(nombre);
+        if (valor !== null) alMenosUnoMarcado = true;
       }
 
       if (!alMenosUnoMarcado) {
@@ -523,16 +560,17 @@
         return;
       }
 
-      const datos = {
-        docente,
-        curso,
-        asignatura,
-        observador,
-        fecha,
+      // Datos generales para la tabla 'observaciones'
+      const datosObservacion = {
+        docente_id: docenteId,
+        docente_nombre: document.getElementById('docente').selectedOptions[0].text,
+        curso: curso,
+        asignatura: asignatura,
+        observador: observador,
+        fecha: fecha,
         hora: document.getElementById('hora').value || null,
         observaciones_generales: document.querySelector('textarea[name="observaciones_generales"]').value,
-        criterios_por_mejorar: document.querySelector('textarea[name="criterios_por_mejorar"]').value,
-        ...indicadores
+        criterios_por_mejorar: document.querySelector('textarea[name="criterios_por_mejorar"]').value
       };
 
       // 🔒 SEGURIDAD: Reemplaza con tus credenciales reales
@@ -541,7 +579,8 @@
       const SUPABASE_KEY = 'tu-anon-key';
 
       try {
-        const response = await fetch(`${SUPABASE_URL}/rest/v1/observaciones`, {
+        // Paso 1: Insertar en la tabla 'observaciones' y obtener el ID
+        const obsResponse = await fetch(`${SUPABASE_URL}/rest/v1/observaciones`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -549,20 +588,58 @@
             'Authorization': `Bearer ${SUPABASE_KEY}`,
             'Prefer': 'return=representation'
           },
-          body: JSON.stringify(datos)
+          body: JSON.stringify(datosObservacion)
         });
 
-        if (response.ok) {
-          alert("¡Observación registrada con éxito!");
+        if (!obsResponse.ok) {
+          throw new Error(`Error al crear observación: ${obsResponse.status}`);
+        }
+
+        const obsData = await obsResponse.json();
+        const observacionId = obsData[0].id; // Suponiendo que devuelve un array con un elemento
+
+        // Paso 2: Insertar cada respuesta en la tabla 'respuestas'
+        const promesasRespuestas = [];
+        for (const nombreIndicador of nombresIndicadores) {
+          const valor = getRespuesta(nombreIndicador);
+          if (valor === null) continue; // No guardar respuestas N/A (null)
+
+          const datosRespuesta = {
+            observacion_id: observacionId,
+            indicador_id: indicadorMap[nombreIndicador],
+            valor: valor
+          };
+
+          promesasRespuestas.push(
+            fetch(`${SUPABASE_URL}/rest/v1/respuestas`, {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+                'apikey': SUPABASE_KEY,
+                'Authorization': `Bearer ${SUPABASE_KEY}`,
+                'Prefer': 'return=representation'
+              },
+              body: JSON.stringify(datosRespuesta)
+            })
+          );
+        }
+
+        // Esperar a que todas las respuestas se guarden
+        const resultadosRespuestas = await Promise.all(promesasRespuestas);
+
+        // Verificar si todas las respuestas fueron exitosas
+        const todasExitosas = resultadosRespuestas.every(res => res.ok);
+
+        if (todasExitosas) {
+          alert("¡Observación y respuestas guardadas con éxito!");
           validarYLimpiar(null);
         } else {
-          const errorText = await response.text();
-          console.error('Error Supabase:', errorText);
-          alert("Error al guardar. Por favor, verifica tu conexión o los datos.");
+          throw new Error("Error al guardar algunas respuestas.");
         }
+
       } catch (error) {
-        console.error('Error de red:', error);
-        alert("No se pudo conectar con el servidor. Verifica tu conexión a internet.");
+        console.error('Error al enviar observación:', error);
+        alert(`Hubo un problema al guardar los datos. Por favor, inténtalo de nuevo.\nDetalles: ${error.message}`);
       }
     }
   </script>
