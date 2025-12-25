@@ -464,7 +464,7 @@
         <button type="button" class="btn btn-excel" onclick="enviarObservacion()">
           💾 Guardar en Registro
         </button>
-        <button type="button" class="btn btn-clear" onclick="validarYLimpiar(event)">
+        <button type="button" class="btn btn-clear" onclick="validarYLimpiar()">
           🧹 Limpiar datos
         </button>
       </div>
@@ -493,8 +493,8 @@
       window.print();
     }
 
-    function validarYLimpiar(event) {
-      event.preventDefault();
+    // Función corregida: no recibe ni usa 'event'
+    function validarYLimpiar() {
       const form = document.getElementById('observaciones');
       if (form) {
         form.reset();
@@ -573,7 +573,7 @@
       };
 
       // 🔒 ¡REEMPLAZA ESTOS VALORES CON TU PROYECTO DE SUPABASE!
-      const SUPABASE_URL = 'https://mgiwhpggvgjbwiarhgym.supabase.co';
+      const SUPABASE_URL = 'https://mgiwhpggvgjbwiarhgym.supabase.co'; // ✅ Sin espacios
       const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1naXdocGdndmdqYndpYXJoZ3ltIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjY0ODkxNzAsImV4cCI6MjA4MjA2NTE3MH0.jqyVyKnkvBJU7TXO1_iQDLZqBtGVZ0NAvsfXFWXJUnE';
 
       try {
@@ -629,9 +629,12 @@
 
         if (todasExitosas) {
           alert("¡Observación y respuestas guardadas con éxito!");
-          validarYLimpiar(null);
+          validarYLimpiar(); // ✅ Llama sin argumentos
         } else {
-          throw new Error("Error al guardar algunas respuestas.");
+          // ✅ Mensaje de error más descriptivo
+          const errores = resultadosRespuestas.filter(res => !res.ok);
+          console.error('Errores al guardar respuestas:', errores);
+          throw new Error(`Error al guardar ${errores.length} respuesta(s).`);
         }
 
       } catch (error) {
@@ -642,5 +645,3 @@
   </script>
 </body>
 </html>
-
-
