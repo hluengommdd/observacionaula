@@ -67,7 +67,7 @@ const ObservacionForm = ({ docentes, supabase }) => {
     observaciones_generales: '',
     criterios_por_mejorar: '',
     // Ruta al logo oficial ubicado en /public (se imprime si existe)
-    logoUrl: '/logo-oficial.png'
+    logoUrl: import.meta.env.VITE_LOGO_URL || '/logo-oficial.png'
   })
 
   const [respuestas, setRespuestas] = useState({})
