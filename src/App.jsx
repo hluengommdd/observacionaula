@@ -40,8 +40,11 @@ function App() {
   return (
     <div className="app">
       <header className="app-header">
-        <h1>MADRES DOMINICAS CONCEPCIÓN</h1>
-        <h2>PAUTA DE OBSERVACIÓN DOCENTE</h2>
+        <img className="header-logo" src="/logo-oficial.png" alt="Logo" />
+        <div className="header-content">
+          <h1>MADRES DOMINICAS CONCEPCIÓN</h1>
+          <h2>PAUTA DE OBSERVACIÓN DOCENTE</h2>
+        </div>
       </header>
 
       <main className="app-main">
