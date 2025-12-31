@@ -1,0 +1,125 @@
+@import url('../css/print-variables.css');
+
+@page {
+  size: var(--print-page-size) var(--print-orientation);
+  margin: var(--print-margin-top) var(--print-margin-right) var(--print-margin-bottom) var(--print-margin-left);
+}
+
+@media print {
+  html, body {
+    background: var(--print-background-color) !important;
+    color: var(--print-text-color) !important;
+    font-family: var(--print-font-family) !important;
+    font-size: var(--print-font-size) !important;
+    line-height: var(--print-line-height) !important;
+  }
+
+  /* Ocultar elementos interactivos */
+  .no-print { display: none !important; }
+
+  /* Header y footer fijos para impresión */
+  .print-header { position: fixed; top: 0; left: 0; right: 0; background: white; padding: 12px 2cm; border-bottom: 2px solid #0d47a1; }
+  .print-footer { position: fixed; bottom: 0; left: 0; right: 0; background: white; padding: 8px 2cm; border-top: 1px solid #ddd; font-size: 10pt; text-align: right; }
+
+  /* Espaciado para contenido para evitar solapamiento con header/footer */
+  .print-clone { padding-top: 120px; padding-bottom: 60px; }
+
+  /* Apariencia de los campos (texto plano) */
+  .field-value { display: inline-block; color: #111; }
+  .radio-value { font-weight: 600; color: #0d47a1; }
+
+  /* Firmas */
+  .signature-area hr, .signature-area .signature-col hr { border: none; border-top: 1px dashed #999; margin: 36px 0; }
+
+  /* Saltos de página controlados */
+  .page-break-before { page-break-before: always; }
+  .page-break-after { page-break-after: always; }
+
+
+/* Estilos de documento imprimible tipo informe (según ejemplo) */
+.print-doc-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+.print-doc-header .title {
+  flex: 1 1 auto;
+}
+.print-doc-header h1 {
+  margin: 0 0 4px 0;
+  font-size: 20pt;
+  letter-spacing: 0.2px;
+}
+.print-doc-header .meta {
+  color: #666;
+  font-size: 10pt;
+}
+.print-doc-header .logo {
+  width: 88px;
+  height: 88px;
+  background: #fff;
+  border: 1px solid #ddd;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.doc-hr {
+  border: none;
+  border-top: 2px solid #e6eef8;
+  margin: 14px 0 18px 0;
+}
+
+.section-title { font-size: 14pt; margin: 12px 0; color: #222; }
+
+.card {
+  background: #fafafa;
+  border: 1px solid #e6eef8;
+  border-radius: 8px;
+  padding: 12px 14px;
+  margin-bottom: 12px;
+}
+
+.timeline-item {
+  display: block;
+  background: #fafbfd;
+  border-radius: 6px;
+  padding: 10px 12px;
+  margin-bottom: 10px;
+  border-left: 6px solid #2e86de; /* azul */
+}
+.timeline-item small { color: #666; display:block; }
+
+.resolution-box {
+  background: #e9f7ef; /* verde claro */
+  border: 1px solid #cbead2;
+  border-radius: 8px;
+  padding: 12px;
+  margin: 14px 0;
+  color: #114b26;
+}
+
+.signatures {
+  display:flex; justify-content:space-between; gap:40px; margin-top:40px; align-items:flex-end;
+}
+.signatures .sig { flex:1; text-align:center; }
+.sig-line { border-top:1px solid #999; margin-top:40px; height:1px; }
+
+.print-small-footer { text-align:center; color:#999; font-size:9pt; margin-top:24px; }
+
+  /* Mostrar solo en impresión */
+  .print-only { display: block !important; }
+
+  /* Mantener bloques juntos en una página */
+  .keep-together, .print-table { page-break-inside: avoid; }
+
+  /* Ajustes visuales */
+  header { page-break-after: avoid; }
+  h1, h2 { color: #0d47a1; }
+  table { width: 100%; border-collapse: collapse; }
+  th, td { border: 1px solid var(--print-border-color); padding: 8px; }
+}
+
+/* Por defecto en pantalla no mostrar elementos exclusivos de impresión */
+.print-only { display: none; }

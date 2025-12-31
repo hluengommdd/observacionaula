@@ -1,0 +1,17 @@
+:root {
+    --print-page-size: A4;
+    --print-orientation: portrait;
+    --print-margin-top: 2cm;
+    --print-margin-right: 2cm;
+    --print-margin-bottom: 2cm;
+    --print-margin-left: 2cm;
+    --print-font-family: 'Roboto', Arial, sans-serif;
+    --print-font-size: 12pt;
+    --print-line-height: 1.4;
+    --print-heading-font-weight: 700;
+    --print-text-color: #111;
+    --print-background-color: #fff;
+    --print-border-color: #ddd;
+    --print-paragraph-spacing: 0.9em;
+    --print-section-spacing: 1.5em;
+}

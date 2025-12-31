@@ -1,0 +1,246 @@
+.print-container {
+  display: none;
+}
+
+@media print {
+  /* Solo mostramos el contenedor imprimible, no ocultamos el root completo */
+  .print-container {
+    display: block !important;
+  }
+}
+
+.print-document {
+  font-family: 'Helvetica', Arial, sans-serif;
+  background: white;
+  color: #000;
+  padding: 20pt;
+  line-height: 1.5;
+  font-size: 9pt;
+}
+
+/* ENCABEZADO */
+.print-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16pt;
+  margin-bottom: 16pt;
+  border-bottom: 2pt solid #e5e7eb;
+  padding-bottom: 12pt;
+}
+
+.header-text {
+  flex: 1;
+}
+
+ .print-header h1 {
+  font-size: 14pt;
+  font-weight: bold;
+  margin: 0 0 3pt 0;
+  color: #000;
+}
+
+.header-subtitle {
+  font-size: 9pt;
+  color: #000;
+  margin: 3pt 0 2pt 0;
+}
+
+.header-date {
+  font-size: 8pt;
+  color: #000;
+  margin: 2pt 0 0 0;
+}
+
+.logo-box {
+  width: 45pt;
+  height: 50pt;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f9fafb;
+  border: 1pt solid #d1d5db;
+  border-radius: 4pt;
+  flex-shrink: 0;
+}
+
+.logo-box img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  filter: grayscale(100%);
+}
+
+.logo-box svg {
+  max-width: 100%;
+  max-height: 100%;
+  filter: grayscale(100%);
+}
+
+/* Ensure images inside logo-box keep aspect and are print-friendly */
+.logo-box img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  filter: grayscale(100%);
+}
+
+/* SECCIONES */
+.print-section {
+  margin-bottom: 14pt;
+  page-break-inside: avoid;
+}
+
+.print-section-title {
+  font-size: 10pt;
+  font-weight: bold;
+  color: #1f2937;
+  margin-bottom: 6pt;
+  border-bottom: 1pt solid #e5e7eb;
+  padding-bottom: 3pt;
+}
+
+/* CAJA DE INFORMACIÓN */
+.info-box {
+  background: #f9fafb;
+  border: 1pt solid #e5e7eb;
+  border-radius: 4pt;
+  padding: 10pt;
+  margin-bottom: 10pt;
+}
+
+.info-row {
+  display: flex;
+  margin-bottom: 4pt;
+}
+
+.info-label {
+  width: 120pt;
+  font-weight: bold;
+  color: #000;
+  font-size: 8pt;
+}
+
+.info-value {
+  flex: 1;
+  color: #000;
+  font-size: 8pt;
+}
+
+/* TABLA DE INDICADORES */
+.print-indicators-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 12pt;
+  font-size: 8pt;
+}
+
+.print-indicators-table th {
+  background: #f3f4f6;
+  color: #1f2937;
+  padding: 6pt;
+  text-align: left;
+  font-weight: bold;
+  border-bottom: 1pt solid #d1d5db;
+}
+
+.desc-header {
+  width: 75%;
+}
+
+.result-header {
+  width: 25%;
+  text-align: center;
+}
+
+.print-indicators-table td {
+  padding: 5pt 6pt;
+  border-bottom: 1pt solid #f3f4f6;
+}
+
+.desc-cell {
+  width: 75%;
+  text-align: left;
+}
+
+.result-cell {
+  width: 25%;
+  text-align: center;
+  font-weight: bold;
+  color: #000;
+}
+
+.print-indicators-table tr:nth-child(even) {
+  background: #f9fafb;
+}
+
+/* CAJA DE TEXTO */
+.text-box {
+  background: #f9fafb;
+  border: 1pt solid #e5e7eb;
+  border-radius: 4pt;
+  padding: 10pt;
+  margin-bottom: 10pt;
+  font-size: 8pt;
+  line-height: 1.4;
+  color: #000;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+/* FIRMAS */
+.print-signatures {
+  display: flex;
+  justify-content: space-between;
+  gap: 30pt;
+  margin-top: 30pt;
+  page-break-inside: avoid;
+}
+
+.signature-box {
+  flex: 1;
+  text-align: center;
+}
+
+.signature-line {
+  border-top: 1pt solid #374151;
+  padding-top: 6pt;
+  margin-bottom: 0;
+  height: 30pt;
+}
+
+.signature-label {
+  font-size: 8pt;
+  font-weight: bold;
+  color: #000;
+  margin-top: 6pt;
+}
+
+.signature-name {
+  font-size: 7pt;
+  color: #000;
+  margin-top: 2pt;
+}
+
+.print-date {
+  text-align: right;
+  font-size: 9pt;
+  color: #000;
+  margin-top: 16pt;
+}
+
+/* FOOTER */
+.print-footer {
+  margin-top: 16pt;
+  padding-top: 10pt;
+  border-top: 1pt solid #e5e7eb;
+  text-align: center;
+  font-size: 7pt;
+  color: #9ca3af;
+}
+
+@media screen {
+  .print-container {
+    display: none;
+  }
+}
