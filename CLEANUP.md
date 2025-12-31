@@ -7,7 +7,7 @@ Resumen de acciones realizadas por el dev assistant antes del push:
 - Eliminado `public/veritas.jpg` (duplicado). Si lo necesitas, recupéralo desde tu copia local antes de subir.
 - Añadido `.vite/` a `.gitignore` para evitar cache/build en el repo.
 - Actualizado `.gitignore` y limpiado entradas duplicadas.
-- Añadido `logoUrl` por defecto en `src/components/ObservacionForm.jsx` (apunta a `/logo-oficial.png`).
+- Añadido `logoUrl` por defecto en `src/components/ObservacionForm.jsx` (usa `VITE_LOGO_URL` con fallback a `/logo-oficial.png`).
 - `src/components/PrintDocument.jsx` modificado para usar `formData.logoUrl` o `VITE_LOGO_URL` con fallback a un SVG embebido (evita problemas de carga al imprimir).
 - Commits y push realizados a `origin/main`.
 
