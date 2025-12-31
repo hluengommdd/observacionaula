@@ -451,6 +451,7 @@ const ObservacionForm = ({ docentes, supabase }) => {
 
       {/* Botones */}
       <div className="form-buttons no-print">
+        <p className="buttons-hint">Primero imprima, después guardar registro.</p>
         <button type="button" className="btn btn-print" onClick={handlePrint}>
           🖨️ Imprimir / Guardar como PDF
         </button>
