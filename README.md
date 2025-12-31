@@ -1,3 +1,57 @@
+Observación Aula
+
+Pequeña aplicación React para registrar observaciones docentes y generar un documento imprimible.
+
+Requisitos
+- Node 18+ y npm
+- (Opcional) Supabase project y credenciales para sincronizar observaciones
+
+Instalación
+
+1. Instala dependencias:
+
+```bash
+npm install
+```
+
+2. Variables de entorno (local): crea `.env.local` con al menos:
+
+```
+VITE_LOGO_URL=/logo-oficial.png
+SUPABASE_URL=https://...your-supabase-url...
+SUPABASE_KEY=your-public-or-service-key
+```
+
+`VITE_LOGO_URL` puede apuntar a un archivo en `public/` (ej. `/logo-oficial.png`) o a una URL externa.
+
+Desarrollo
+
+Arrancar el servidor de desarrollo (Vite):
+
+```bash
+npm run dev
+```
+
+La app estará disponible en `http://localhost:5173/` (puede usar otro puerto si está ocupado).
+
+API proxy (opcional)
+
+El proyecto incluye `server.js` que actúa como proxy sencillo hacia la REST API de Supabase. Para usarlo define `SUPABASE_URL` y `SUPABASE_KEY` en el entorno y luego:
+
+```bash
+node server.js
+```
+
+Imprimir
+
+La vista de impresión usa `src/components/PrintDocument.jsx`. El logo se toma de `formData.logoUrl`, luego de `VITE_LOGO_URL`, y finalmente cae a un SVG embebido para garantizar que siempre haya un logo al imprimir.
+
+Buenas prácticas antes de subir
+- No incluyas `.env.local` en el repo (ya está en `.gitignore`).
+- Revisa que no haya claves sensibles en historial de git.
+
+Contacto
+Si necesitas que ajuste el logo, el layout de impresión, o la integración con Supabase, dime y lo implemento.
 # ObservacionAula - Servidor local de prueba
 
 Este repositorio contiene una página `index.html` y un servidor Node mínimo (`server.js`) que sirve archivos estáticos y expone dos endpoints proxy a Supabase:
