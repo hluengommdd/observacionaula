@@ -40,8 +40,7 @@ function App() {
   return (
     <div className="app">
       <header className="app-header">
-        <h1>MADRES DOMINICAS</h1>
-        <p>Concepción</p>
+        <h1>MADRES DOMINICAS CONCEPCIÓN</h1>
         <h2>PAUTA DE OBSERVACIÓN DOCENTE</h2>
       </header>
 
