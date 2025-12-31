@@ -45,6 +45,7 @@ function App() {
           <h1>MADRES DOMINICAS CONCEPCIÓN</h1>
           <h2>PAUTA DE OBSERVACIÓN DOCENTE</h2>
         </div>
+        <img className="header-logo-right" src="/logo-oficial.png" alt="Logo derecha" />
       </header>
 
       <main className="app-main">
