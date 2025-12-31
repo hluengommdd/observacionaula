@@ -22,7 +22,7 @@ SUPABASE_URL=https://...your-supabase-url...
 SUPABASE_KEY=your-public-or-service-key
 ```
 
-`VITE_LOGO_URL` puede apuntar a un archivo en `public/` (ej. `/logo-oficial.png`) o a una URL externa.
+Nota: el código utiliza `import.meta.env.VITE_LOGO_URL || '/logo-oficial.png'` como fallback, por lo que si no defines `VITE_LOGO_URL` se usará `/logo-oficial.png`. `VITE_LOGO_URL` puede apuntar a un archivo en `public/` (ej. `/logo-oficial.png`) o a una URL externa.
 
 Desarrollo
 
