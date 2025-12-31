@@ -4,7 +4,7 @@ import ObservacionForm from './components/ObservacionForm'
 import './App.css'
 
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL
-const supabaseKey = import.meta.env.VITE_SUPABASE_KEY
+const supabaseKey = import.meta.env.VITE_SUPABASE_ANON_KEY
 const supabase = supabaseUrl && supabaseKey ? createClient(supabaseUrl, supabaseKey) : null
 
 function App() {
@@ -51,7 +51,7 @@ function App() {
       <main className="app-main">
         {envError ? (
           <div className="loading">
-            Faltan variables de entorno VITE_SUPABASE_URL o VITE_SUPABASE_KEY.
+            Faltan variables de entorno VITE_SUPABASE_URL o VITE_SUPABASE_ANON_KEY.
             Configúralas en el entorno antes de continuar.
           </div>
         ) : loading ? (

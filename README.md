@@ -18,8 +18,9 @@ npm install
 
 ```
 VITE_LOGO_URL=/logo-oficial.png
+VITE_SUPABASE_ANON_KEY=your-public-anon-key
 SUPABASE_URL=https://...your-supabase-url...
-SUPABASE_KEY=your-public-or-service-key
+SUPABASE_KEY=your-service-role-key
 ```
 
 Nota: el código utiliza `import.meta.env.VITE_LOGO_URL || '/logo-oficial.png'` como fallback, por lo que si no defines `VITE_LOGO_URL` se usará `/logo-oficial.png`. `VITE_LOGO_URL` puede apuntar a un archivo en `public/` (ej. `/logo-oficial.png`) o a una URL externa.
@@ -67,6 +68,8 @@ Variables de entorno necesarias para usar los endpoints API:
 
 - `SUPABASE_URL` (ej: `https://xyz.supabase.co`)
 - `SUPABASE_KEY` (service role key o una key con permisos de inserción)
+
+Para el cliente frontend define `VITE_SUPABASE_ANON_KEY` (clave pública, con permisos limitados). No expongas `SUPABASE_KEY` en el cliente.
 
 Ejemplo para ejecutar localmente:
 
