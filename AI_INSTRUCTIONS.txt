@@ -1,0 +1,35 @@
+Objetivo:
+Reproducir el documento de impresión institucional con el mismo estilo y estructura.
+
+Archivos que copiar al proyecto destino:
+- print-styles/css/print-variables.css
+- print-styles/css/print.css
+- print-styles/js/print-utils.js
+- src/components/PrintDocumentReusable.jsx
+- src/components/PrintDocumentReusable.css
+- README_PRINT.md
+
+Pasos que debe ejecutar la IA (secuencia clara y accionable):
+1) Copiar los archivos listados al repositorio destino manteniendo rutas relativas.
+2) Importar o incluir los CSS de variables y de impresión:
+   - En HTML: <link rel="stylesheet" href="/ruta/print-variables.css"> y
+     <link rel="stylesheet" href="/ruta/print.css" media="print">.
+   - En React/Vite: importar los CSS en el componente de impresión.
+3) Incluir `print-utils.js` antes de `</body>` o importarlo en el montaje del componente.
+4) Añadir el componente React `PrintDocumentReusable.jsx` y su CSS en la carpeta de components.
+5) Renderizar el componente con props: `data`, `logo`, `title`, `footerText`. Opcional: `autoPrint`.
+6) Actualizar `print-variables.css` para aplicar identidad institucional (colores, fuentes, márgenes).
+7) Probar vista de impresión y PDF en Chrome/Firefox; validar márgenes, saltos de página, resolución de logos.
+
+Reglas importantes (obligatorias):
+- Mantener la jerarquía `header` → `main` → `footer`.
+- Ocultar controles UI con la clase `no-print`.
+- Evitar `overflow` en contenedores que deben paginar; usar `page-break-inside: avoid` en bloques críticos.
+- Asegurar que las fuentes web estén cargadas antes de imprimir (document.fonts.ready o wait).
+
+Salida esperada:
+- Un ZIP opcional (`print-package.zip`) con los archivos listados y `README_PRINT.md`.
+
+Notas para la IA que ejecuta cambios:
+- No modificar la estructura de clases sin mapear el cambio a `README_PRINT.md`.
+- Mantener variables en `print-variables.css` como única fuente de identidad.

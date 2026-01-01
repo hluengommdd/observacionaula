@@ -1,0 +1,41 @@
+:root{
+  --institution-color: #0b5cff;
+  --font-family: Arial, Helvetica, sans-serif;
+  --logo-width: 110px;
+  --paper-margin: 18mm;
+}
+
+.print-document{
+  font-family: var(--font-family);
+  color: #222;
+  padding: 12px;
+}
+
+.print-header{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  border-bottom:2px solid var(--institution-color);
+  padding-bottom:8px;
+  margin-bottom:10px;
+}
+.print-logo{ width: var(--logo-width); height: auto }
+.print-title{ font-size:1.2rem; font-weight:700 }
+
+.print-body{ font-size:0.95rem }
+.print-section{ margin-bottom:10px; page-break-inside: avoid }
+.section-heading{ color:var(--institution-color); margin:6px 0 }
+
+.print-table{ width:100%; border-collapse:collapse; margin-top:6px }
+.print-table th, .print-table td{ border:1px solid #ccc; padding:6px; text-align:left }
+
+.print-footer{ border-top:1px solid #ddd; margin-top:12px; padding-top:8px; font-size:0.9rem }
+
+.no-print{ display:none }
+
+@media print{
+  .no-print{ display:none !important }
+  body * { visibility: visible }
+  #print-document-root { visibility: visible }
+  @page { size: A4 portrait; margin: var(--paper-margin) }
+}
